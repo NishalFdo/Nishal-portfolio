@@ -28,7 +28,7 @@ export const AboutSection = () => {
                         </div>
 
                         <h3 className="text-2xl font-semibold">
-                            Passionate Web Developer & Tech Creator
+                            Passionate Web Developer & Software Engineer
                         </h3>
 
                         <p className="text-muted-foreground">
@@ -49,7 +49,8 @@ export const AboutSection = () => {
                                 Get In Touch
                             </a>
                             <a
-                                href=""
+                                href="./Nishal_Fernando_CV.pdf"
+                                download="Nishal_Fernando_CV.pdf"
                                 className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300"
                             >
                                 Download CV

@@ -102,7 +102,7 @@ export const ContactSection = () => {
                                 <a href="https://www.linkedin.com/in/nishal-fernando-3873a0314?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank">
                                     <Linkedin className="w-6 h-6 text-primary hover:scale-110 transition-transform" />
                                 </a>
-                                <a href="#" target="_blank">
+                                <a href="https://www.instagram.com/its_nishal_fdo?igsh=ZnE5N3g5ZXZmMWZx&utm_source=qr" target="_blank">
                                     <Instagram className="w-6 h-6 text-primary hover:scale-110 transition-transform" />
                                 </a>
                                 <a href="#" target="_blank">
