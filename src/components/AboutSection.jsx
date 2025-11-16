@@ -5,7 +5,7 @@ export const AboutSection = () => {
         <section id="about" className="py-24 px-4 relative">
             <div className="container mx-auto max-w-5xl">
                 <h2
-                    className="text-2xl md:text-4xl font-bold mb-12 text-center"
+                    className="text-2xl md:text-4xl font-bold  text-center"
                     data-aos="fade-down"
                 >
                     About <span className="text-primary"> Me</span>

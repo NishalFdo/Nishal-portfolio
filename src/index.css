@@ -124,6 +124,8 @@
   body {
     @apply bg-background text-foreground transition-colors duration-300;
     font-feature-settings: "rlig" 1, "calt" 1;
+    overflow-x: hidden;
+
   }
 
   /* --- Floating Bubble Animation (Light Mode Only) --- */
