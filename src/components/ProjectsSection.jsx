@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 // Import new icons for navigation
-import { ArrowRight, Github, X, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight, Github, X, ChevronLeft, ChevronRight, Globe } from "lucide-react";
 
 // ----------------------------------------------------------------------
 // 1. PROJECT DATA (Unchanged)
@@ -50,6 +50,25 @@ const projects = [
             "/Projects/project3-detail-2.png",
             "/Projects/project3-detail-3.png",
             "/Projects/project3-detail-4.png"
+
+        ],
+    },
+    {
+        id: 4,
+        title: "MomOS Marketing Website",
+        description:
+            "A marketing website for MomOS that introduces its intelligent productivity system, core features, and vision for distraction-free computing.",
+        image: "/Projects/project4.png",
+        tags: ["React", "TailwindCSS", "Javascript"],
+        websiteUrl: "https://mom-os.site",
+
+        longDescription:
+            "The MomOS Marketing Website is a clean, informative web platform designed to showcase the MomOS productivity system. It explains the problem of digital distraction, presents MomOS’s intelligent task-awareness approach, highlights key features such as activity monitoring and smart nudges, and communicates the project’s research and technical vision. The site serves as an entry point for users, collaborators, and evaluators to understand MomOS before installing the desktop application.",
+        moreImages: [
+            "/Projects/project4-detail-1.png",
+            "/Projects/project4-detail-2.png",
+            "/Projects/project4-detail-3.png"
+
 
         ],
     },
@@ -289,19 +308,19 @@ export const ProjectsSection = () => {
         <section id="projects" className="py-24 px-4 relative">
             <div className="container mx-auto max-w-5xl">
                 <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
-                    {" "}
                     Featured <span className="text-primary"> Projects </span>
                 </h2>
 
                 <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-                    Here are some of my recent projects. Click on any card to see more details, screenshots, and Github links.
+                    Here are some of my recent projects. Click on any card to see more details,
+                    screenshots, and Github links.
                 </p>
 
                 {/* Project Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {projects.map((project, key) => (
+                    {projects.map((project) => (
                         <div
-                            key={key}
+                            key={project.id}
                             onClick={() => openModal(project)}
                             className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover cursor-pointer transition-all duration-300 hover:shadow-lg"
                         >
@@ -325,29 +344,59 @@ export const ProjectsSection = () => {
                                     ))}
                                 </div>
 
-                                <h3 className="text-xl font-semibold mb-1"> {project.title}</h3>
+                                <h3 className="text-xl font-semibold mb-1">
+                                    {project.title}
+                                </h3>
+
                                 <p className="text-muted-foreground text-sm mb-4">
                                     {project.description}
                                 </p>
+
                                 <div className="flex justify-between items-center">
                                     <p className="flex items-center text-primary text-sm font-medium">
-                                        View Details <ArrowRight size={16} className="ml-1 transition-transform duration-300 group-hover:translate-x-1" />
+                                        View Details
+                                        <ArrowRight
+                                            size={16}
+                                            className="ml-1 transition-transform duration-300 group-hover:translate-x-1"
+                                        />
                                     </p>
-                                    <a
-                                        href={project.githubUrl}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        onClick={(e) => e.stopPropagation()}
-                                        className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                                    >
-                                        <Github size={20} />
-                                    </a>
+
+                                    <div className="flex items-center gap-3">
+                                        {/* Website (MomOS only for now) */}
+                                        {project.websiteUrl && (
+                                            <a
+                                                href={project.websiteUrl}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                onClick={(e) => e.stopPropagation()}
+                                                className="text-foreground/80 hover:text-primary transition-colors"
+                                                aria-label="Open live website"
+                                            >
+                                                <Globe size={20} />
+                                            </a>
+                                        )}
+
+                                        {/* GitHub */}
+                                        {project.githubUrl && (
+                                            <a
+                                                href={project.githubUrl}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                onClick={(e) => e.stopPropagation()}
+                                                className="text-foreground/80 hover:text-primary transition-colors"
+                                                aria-label="View source code"
+                                            >
+                                                <Github size={20} />
+                                            </a>
+                                        )}
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     ))}
                 </div>
 
+                {/* Global GitHub CTA */}
                 <div className="text-center mt-12">
                     <a
                         className="cosmic-button w-fit flex items-center mx-auto gap-2"
@@ -360,8 +409,8 @@ export const ProjectsSection = () => {
                 </div>
             </div>
 
-            {/* Render the Modal */}
+            {/* Modal */}
             <ProjectModal project={selectedProject} onClose={closeModal} />
         </section>
-    );
+    )
 };
