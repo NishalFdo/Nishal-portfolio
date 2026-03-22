@@ -105,9 +105,7 @@ export const ContactSection = () => {
                                 <a href="https://www.instagram.com/its_nishal_fdo?igsh=ZnE5N3g5ZXZmMWZx&utm_source=qr" target="_blank">
                                     <Instagram className="w-6 h-6 text-primary hover:scale-110 transition-transform" />
                                 </a>
-                                <a href="#" target="_blank">
-                                    <Twitch className="w-6 h-6 text-primary hover:scale-110 transition-transform" />
-                                </a>
+
                             </div>
                         </div>
 
