@@ -15,7 +15,7 @@ const skills = [
 
     { name: "Python", level: 70, category: "backend" },
     //Database
-    { name: "ElastiSearch", level: 80, category: "database" },
+    { name: "ElasticSearch", level: 80, category: "database" },
     { name: "MySQL", level: 70, category: "database" },
 
     // Tools
